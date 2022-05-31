@@ -1,0 +1,31 @@
+I will have to make a subroutine that serves to change the photos of each project depending on which button is pressed (previous
+or next).
+
+So, each project will have a constant in the form of an array, whose elements will be the src of each photo taken from the project.
+
+If next is pressed, it is verified that the array is not in the last position. If not, then the src is not changed.
+of the project image. Otherwise, the new src is replaced by the next element in the array. Same logic in case
+that the button clicked is "previous" (only in this case, it is checked if the array is not in the first position).
+
+So the algorithm would look like this:
+
+
+//Code in spanglish, howewer, the definite code is in the "index.html" file
+const array imagenes=[src1, src2. src3, ..., srcN]
+var int indiceImagen=src1
+
+function cambiarSrc(string idElementoACambiar, bool boton, int indiceActual, array imagenes){
+  var elementoHtml elemento=document.getElementById(idElementoACambiar)
+  //boton=true=siguiente, anterior caso contrario
+  if (boton){
+    if (indiceActual<imagenes.length){
+      indiceActual++
+      element.src=imagenes[indiceActual]
+    }
+  } else{ 
+    if (indiceActual>1){
+      indiceActual--
+      element.src=imagenes[indiceActual]
+    }
+  }
+}
